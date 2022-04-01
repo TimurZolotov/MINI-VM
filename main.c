@@ -1,6 +1,6 @@
 #include <stdlib.h>
-#include <math.h>
 #include <errno.h>
+#include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
 
@@ -26,7 +26,10 @@ extern int errno;
 struct VirtualMachine* new_vm(int *, int, int);
 void delete_vm(struct VirtualMachine *);
 void run_interpretation_loop(struct VirtualMachine *);
+
+
 static inline int *set_values_of_bytecodes_array(const char *);
+int binary_power(double, unsigned long long);
 
 
 static inline void push_the_sum_of_two_numbers(struct VirtualMachine *);
@@ -135,6 +138,18 @@ static inline int *set_values_of_bytecodes_array(const char *path_to_file_with_b
     return bytecodes;
 }
 
+int binary_power(double number, unsigned long long exhibitor) {
+       double powered_number = 1.0;
+       while(exhibitor != 0) {
+              if((exhibitor & 1) != 0) {
+                     powered_number *= number;
+              }
+              number *= number;
+              exhibitor >>= 1;
+       }
+       return (int) powered_number;
+}
+
 
 
 struct VirtualMachine *new_vm(int *bytecodes_array, int program_counter, int data_size) {  
@@ -183,8 +198,8 @@ static inline void push_the_quotien_of_numbers(struct VirtualMachine *vm) {
 }
 
 static inline void push_powered_number(struct VirtualMachine *vm) {
-    int degree = POP(vm);
-    PUSH(vm, pow(POP(vm), degree));
+    int exhibitor = POP(vm);
+    PUSH(vm, binary_power(POP(vm), exhibitor));
 }
 
 static inline void push_square_root_of_number(struct VirtualMachine *vm) {

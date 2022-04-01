@@ -56,6 +56,9 @@ static inline void exit_from_subprogram(struct VirtualMachine *);
 static inline void push_increased_number(struct VirtualMachine *);
 static inline void push_decreased_number(struct VirtualMachine *);
 static inline void print_ch(struct VirtualMachine *);
+static inline void push_less_then_or_equal_to_boolean_result(struct VirtualMachine *);
+static inline void push_more_then_boolean_result(struct VirtualMachine *);
+static inline void push_more_then_or_equal_to_boolean_result(struct VirtualMachine *);
 
 enum {
     OP_ADD_I32 = 1,
@@ -81,7 +84,10 @@ enum {
     OP_RET,
     OP_INC_I32 = 22,
     OP_DEC_I32,
-    OP_PRINT_CH
+    OP_PRINT_CH,
+    OP_LTOEQT_I32,
+    OP_MT_I32,
+    OP_MTOEQT_I32
 };
 
 void (*operations[])(struct VirtualMachine *) = {
@@ -108,7 +114,10 @@ void (*operations[])(struct VirtualMachine *) = {
     exit_from_subprogram,
     push_increased_number,
     push_decreased_number,
-    print_ch
+    print_ch,
+    push_less_then_or_equal_to_boolean_result,
+    push_more_then_boolean_result,
+    push_more_then_or_equal_to_boolean_result
 };
 
 int main(int argc, char *argv[]) {
@@ -293,4 +302,16 @@ static inline void push_decreased_number(struct VirtualMachine *vm) {
 
 static inline void print_ch(struct VirtualMachine *vm) {
     fprintf(stdout, "%c", POP(vm));
+}
+
+static inline void push_less_then_or_equal_to_boolean_result(struct VirtualMachine *vm) {
+    PUSH(vm, (POP(vm) <= POP(vm)) ? 1 : 0); 
+}
+
+static inline void push_more_then_boolean_result(struct VirtualMachine *vm) {
+    PUSH(vm, (POP(vm) > POP(vm)) ? 1 : 0);
+}
+
+static inline void push_more_then_or_equal_to_boolean_result(struct VirtualMachine *vm) {
+    PUSH(vm, (POP(vm) >= POP(vm)) ? 1 : 0);
 }

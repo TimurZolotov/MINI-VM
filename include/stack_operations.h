@@ -28,6 +28,7 @@ void push_decreased_number(struct VirtualMachine *);
 void print_ch(struct VirtualMachine *);
 void push_less_then_or_equal_to_boolean_result(struct VirtualMachine *);
 void push_more_then_boolean_result(struct VirtualMachine *);
-void push_more_then_or_equal_to_boolean_result(struct VirtualMachine *);
+void push_more_then_or_equal_to_boolean_result(struct VirtualMachine *); 
+void stopped_programm(struct VirtualMachine *);
 
 #endif

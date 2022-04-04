@@ -37,7 +37,8 @@ enum {
     OP_PRINT_CH,
     OP_LTOEQT_I32,
     OP_MT_I32,
-    OP_MTOEQT_I32
+    OP_MTOEQT_I32,
+    OP_MICRO_SLEEP
 };
 
 void (*operations[])(struct VirtualMachine *) = {
@@ -67,7 +68,8 @@ void (*operations[])(struct VirtualMachine *) = {
     print_ch,
     push_less_then_or_equal_to_boolean_result,
     push_more_then_boolean_result,
-    push_more_then_or_equal_to_boolean_result
+    push_more_then_or_equal_to_boolean_result, 
+    stopped_programm
 };
 
 int main(int argc, char *argv[]) {

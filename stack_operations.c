@@ -3,6 +3,7 @@
 #include "include/algorithms.h"
 #include <stdbool.h>
 #include <stdio.h>
+#include <unistd.h>
 #include <math.h>
 
 
@@ -134,4 +135,8 @@ void push_more_then_boolean_result(struct VirtualMachine *vm) {
 
 void push_more_then_or_equal_to_boolean_result(struct VirtualMachine *vm) {
     PUSH(vm, (POP(vm) >= POP(vm)) ? 1 : 0);
+}
+
+void stopped_programm(struct VirtualMachine *vm) {
+    usleep(POP(vm));
 }

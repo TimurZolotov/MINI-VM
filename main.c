@@ -38,7 +38,13 @@ enum {
     OP_LTOEQT_I32,
     OP_MT_I32,
     OP_MTOEQT_I32,
-    OP_MICRO_SLEEP
+    OP_MICRO_SLEEP,
+    OP_BIT_AND,
+    OP_BIT_OR,
+    OP_BIT_NOT,
+    OP_BIT_XOR,
+    OP_LEFT_SHIFT,
+    OP_RIGHT_SHIFT
 };
 
 void (*operations[])(struct VirtualMachine *) = {
@@ -69,7 +75,13 @@ void (*operations[])(struct VirtualMachine *) = {
     push_less_then_or_equal_to_boolean_result,
     push_more_then_boolean_result,
     push_more_then_or_equal_to_boolean_result, 
-    stopped_programm
+    stopped_programm, 
+    push_bit_and_result,
+    push_bit_or_result,
+    push_bit_not_result,
+    push_bit_xor_result,
+    push_bit_left_shift_result,
+    push_bit_right_shift_result
 };
 
 int main(int argc, char *argv[]) {

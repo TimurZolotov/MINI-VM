@@ -140,3 +140,27 @@ void push_more_then_or_equal_to_boolean_result(struct VirtualMachine *vm) {
 void stopped_programm(struct VirtualMachine *vm) {
     usleep(POP(vm));
 }
+
+void push_bit_and_result(struct VirtualMachine *vm) {
+    PUSH(vm, POP(vm) & POP(vm));
+}
+
+void push_bit_or_result(struct VirtualMachine *vm) {
+    PUSH(vm, POP(vm) | POP(vm));
+}
+
+void push_bit_not_result(struct VirtualMachine *vm) {
+    PUSH(vm, ~POP(vm));
+}
+
+void push_bit_xor_result(struct VirtualMachine *vm) {
+    PUSH(vm, POP(vm) ^ POP(vm));
+}
+
+void push_bit_left_shift_result(struct VirtualMachine *vm) {
+    PUSH(vm, POP(vm) << POP(vm));
+}
+
+void push_bit_right_shift_result(struct VirtualMachine *vm) {
+    PUSH(vm, POP(vm) >> POP(vm));
+}

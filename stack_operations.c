@@ -32,8 +32,8 @@ void push_powered_number(struct VirtualMachine *vm) {
     PUSH(vm, binary_power(POP(vm), exhibitor));
 }
 
-void push_square_root_of_number(struct VirtualMachine *vm) {
-    PUSH(vm, sqrt(POP(vm)));
+void push_root_of_number(struct VirtualMachine *vm) {
+    PUSH(vm, round(binary_power(POP(vm), 1.0 / POP(vm))));
 }
 
 void push_less_than_boolean_result(struct VirtualMachine *vm) {

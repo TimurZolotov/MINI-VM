@@ -53,7 +53,7 @@ void (*operations[])(struct VirtualMachine *) = {
     push_the_product_of_numbers,
     push_the_quotien_of_numbers,
     push_powered_number,
-    push_square_root_of_number,
+    push_root_of_number,
     push_less_than_boolean_result,
     push_equivalent_boolean_result,
     set_program_counter_certainly,

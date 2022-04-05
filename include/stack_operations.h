@@ -7,7 +7,7 @@ void push_the_difference_of_numbers(struct VirtualMachine *);
 void push_the_product_of_numbers(struct VirtualMachine *);
 void push_the_quotien_of_numbers(struct VirtualMachine *);
 void push_powered_number(struct VirtualMachine *);
-void push_square_root_of_number(struct VirtualMachine *);
+void push_root_of_number(struct VirtualMachine *);
 void push_less_than_boolean_result(struct VirtualMachine *);
 void push_equivalent_boolean_result(struct VirtualMachine *);
 void set_program_counter_certainly(struct VirtualMachine *);

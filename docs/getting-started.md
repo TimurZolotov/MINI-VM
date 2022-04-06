@@ -31,3 +31,5 @@ make
 ```
 
 В каталоге проекта содержится пример файла с байт-кодом example\_bytecode, если он вам не понадобится удалите его.
+
+<a align="right" href="https://github.com/TimurZolotov/MINI-VM/blob/master/docs/operations-codes.md">Следующее: Операции и их коды в шестнадцатеричной системе счисления</a>

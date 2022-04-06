@@ -34,5 +34,5 @@ make
 
 
 <div align="right">
-    <a href="https://github.com/TimurZolotov/MINI-VM/blob/master/docs/operations-codes.md">Следующее: Операции и их коды в шестнадцатеричной системе счисления</a>
+    <a href="https://github.com/TimurZolotov/MINI-VM/blob/master/docs/operations-codes.md">Следующее: hex-коды операций и их описание</a>
 </div>
